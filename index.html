@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OvalStats Test</title>
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.23.9/babel.min.js"></script>
+  <style>body{background:#1A0E04;color:#F0E0C0;font-family:sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;}</style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useState } = React;
+    function App() {
+      const [count, setCount] = useState(0);
+      return (
+        <div style={{textAlign:'center'}}>
+          <h1 style={{color:'#C89640',fontSize:32}}>OVALSTATS</h1>
+          <p style={{color:'rgba(200,150,64,0.6)',letterSpacing:3}}>Performance Rugby</p>
+          <p style={{marginTop:20}}>Si tu vois ça, React fonctionne ✅</p>
+          <button onClick={()=>setCount(c=>c+1)} 
+            style={{marginTop:20,background:'#C89640',color:'#1A0E04',border:'none',
+              borderRadius:10,padding:'12px 24px',fontSize:16,cursor:'pointer'}}>
+            Clics: {count}
+          </button>
+        </div>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
+  </script>
+</body>
+</html>
